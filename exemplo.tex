@@ -11,9 +11,9 @@
     int main () {
       long num, num2, result;
 
-      while(scanf("\%ls \%ld", &num, &num2) != EOF)) {
+      while(scanf("%ls %ld", &num, &num2) != EOF)) {
 	result = ciclo(num, num2);
-	printf("\%ld \%ld \%ld$\backslash$n", num, num2, result); 
+	printf("%ld %ld %ld\n", num, num2, result); 
       }
       return 0;
     }
@@ -27,11 +27,20 @@
   \end{tabular}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Comandos no Terminal}
   \begin{enumerate}
     \item Criar uma arquivo com os dados de entrada. Para listar o que tem dentro do arquivo basta digitar: cat nome\_prog
+    \begin{lstlisting}
+     Guilherme@localhost 1$ ls
+    \end{lstlisting}
     \item Compilar programa
+    \begin{lstlisting}
+     Arrumar
+    \end{lstlisting}
     \item Ligar o arquivo de entrada com o programa principal
+    \begin{lstlisting}
+     Arrumar
+    \end{lstlisting}
   \end{enumerate}
 \end{frame}
