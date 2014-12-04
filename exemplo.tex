@@ -30,17 +30,35 @@
 \begin{frame}[fragile]
   \frametitle{Comandos no Terminal}
   \begin{enumerate}
-    \item Criar uma arquivo com os dados de entrada. Para listar o que tem dentro do arquivo basta digitar: cat nome\_prog
-    \begin{lstlisting}
-     Guilherme@localhost 1$ ls
-    \end{lstlisting}
-    \item Compilar programa
-    \begin{lstlisting}
-     Arrumar
-    \end{lstlisting}
-    \item Ligar o arquivo de entrada com o programa principal
-    \begin{lstlisting}
-     Arrumar
-    \end{lstlisting}
+    \begin{columns}[T]
+      \begin{column}[T]{4.7cm}
+       \item {\small Criar uma arquivo com os dados de entrada. Para listar o que tem dentro do arquivo basta digitar: cat nome\_prog}
+       \begin{lstlisting}[basicstyle=\tiny]
+Guilherme@localhost 1$ ls
+entrada  p  prog1.c
+Guilherme@localhost 1$ cat entrada
+1 10
+100 200
+201 210
+900 1000
+       \end{lstlisting}
+      \end{column}
+
+      \begin{column}[T]{5.2cm} 
+	\item {\small Compilar programa:}
+	\begin{lstlisting}[basicstyle=\tiny]
+Guilherme@localhost 1$ gcc prog1.c -o p
+	\end{lstlisting}
+	\item {\small Ligar o arquivo de entrada com o programa principal:}
+	\begin{lstlisting}[basicstyle=\tiny]
+Guilherme@localhost 1$ cat entrada| ./p
+1 10 20
+100 200 125
+201 210 89
+900 1000 174
+	\end{lstlisting}
+      \end{column}
+    \end{columns}
   \end{enumerate}
+
 \end{frame}
