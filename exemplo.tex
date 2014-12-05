@@ -8,15 +8,15 @@
   \frametitle{Entrada e saida padrão}
   Como pegar a entrada? E como fazer a saída corretamente?
   \begin{lstlisting}[language=c]
-    int main () {
-      long num, num2, result;
+int main () {
+  long num, num2, result;
 
-      while(scanf("%ls %ld", &num, &num2) != EOF)) {
-	result = ciclo(num, num2);
-	printf("%ld %ld %ld\n", num, num2, result); 
-      }
-      return 0;
-    }
+  while(scanf("%ls %ld", &num, &num2) != EOF)) {
+    result = ciclo(num, num2);
+    printf("%ld %ld %ld\n", num, num2, result); 
+  }
+  return 0;
+}
   \end{lstlisting}
   \begin{tabular}{ll}\\
     Entrada padrão: &Saída padrão:\\
