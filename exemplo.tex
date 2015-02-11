@@ -1,7 +1,14 @@
 \begin{frame}
   \frametitle{Exemplo de algoritmo}
-  \textbf{\small Considere o seguinte algoritmo para gerar uma sequência de números. Comece com um número inteiro n. Se n é par, divida por 2. Se n for ímpar, multiplique por 3 e adicione 1. Repita este processo com o novo valor de n, encerra quando n = 1. Por exemplo, a seguinte seqüência de números será gerada para n = 22:\\22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1\\}
-  \textbf{\small Especula - se (mas ainda não comprovada) que este algoritmo terminará em n = 1 para cada inteiro n. Ainda, a conjectura mantém para todos os inteiros até pelo menos 1.000.000.\\Para um n de entrada, a duração do ciclo de n é o número de números gerados até e incluindo a 1. No exemplo acima, a duração do ciclo de 22 é 16. Dado dois números i e j, você vai determinar a duração do ciclo máximo sobre todos os números entre i e j, incluindo ambas as extremidades.}
+  \textbf{\footnotesize Considere o seguinte algoritmo para gerar uma sequência de números. Comece com um número inteiro n. Se n é par, divida por 2. Se n for ímpar, multiplique por 3 e adicione 1. Repita este processo com o novo valor de n, encerra quando n = 1.}
+  
+  \textbf{\footnotesize Por exemplo, a seguinte seqüência de números será gerada para n = 22:}
+  
+  \textbf{\footnotesize 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1}
+  
+  \textbf{\footnotesize Especula - se (mas ainda não comprovada) que este algoritmo terminará em n = 1 para cada inteiro n. Ainda, a conjectura mantém para todos os inteiros até pelo menos 1.000.000.}
+  
+  \textbf{\footnotesize Para um n de entrada, a duração do ciclo de n é o número de números gerados até e incluindo a 1. No exemplo acima, a duração do ciclo de 22 é 16. Dado dois números i e j, você vai determinar a duração do ciclo máximo sobre todos os números entre i e j, incluindo ambas as extremidades.}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -32,11 +39,11 @@ int main () {
   \begin{enumerate}
     \begin{columns}[T]
       \begin{column}[T]{4.7cm}
-       \item {\small Criar uma arquivo com os dados de entrada. Para listar o que tem dentro do arquivo basta digitar: cat nome\_prog}
+       \item {\small Criar uma arquivo com os dados de entrada. Para listar o que tem dentro do arquivo basta digitar: cat nome\_arquivo}
        \begin{lstlisting}[basicstyle=\tiny]
-Guilherme@localhost 1$ ls
+$ ls
 entrada  p  prog1.c
-Guilherme@localhost 1$ cat entrada
+$ cat entrada
 1 10
 100 200
 201 210
@@ -47,11 +54,11 @@ Guilherme@localhost 1$ cat entrada
       \begin{column}[T]{5.2cm} 
 	\item {\small Compilar programa:}
 	\begin{lstlisting}[basicstyle=\tiny]
-Guilherme@localhost 1$ gcc prog1.c -o p
+$ gcc prog1.c -o p
 	\end{lstlisting}
 	\item {\small Ligar o arquivo de entrada com o programa principal:}
 	\begin{lstlisting}[basicstyle=\tiny]
-Guilherme@localhost 1$ cat entrada| ./p
+$ cat entrada| ./p
 1 10 20
 100 200 125
 201 210 89
