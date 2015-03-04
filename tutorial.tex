@@ -18,9 +18,10 @@
   Como pegar a entrada? E como fazer a saída corretamente?
   \begin{lstlisting}[language=c]
 int main () {
-  int A, B;
+  int A, B, SOMA;
   while(scanf("%d %d", &A, &B) != EOF) {
-    printf("SOMA = %d\n", A + B);
+    SOMA = A + B;
+    printf("SOMA = %d\n", SOMA);
   }
   return 0;
 }
@@ -45,7 +46,7 @@ entrada  p  prog1.c
 $ cat entrada
 30 10
 -30 10
-0 1
+0 0
        \end{lstlisting}
       \end{column}
 
