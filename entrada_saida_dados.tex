@@ -1,3 +1,12 @@
+\AtBeginSubsection[] {
+\begin{frame}
+ \frametitle{Tipos de entrada e saida de dados}
+ \tableofcontents[currentsubsection]
+\end{frame}
+}
+
+\subsection{Múltiplos casos de teste}
+
 \begin{frame} [fragile]
   \frametitle{Múltiplos casos de teste}
   {\small Em um concurso de programação, ao invés de usar muitos arquivos de teste individual, utiliza-se apenas um arquivo de casos de teste com vários casos de testes incluídos. Usaremos um simples problema como exemplo de problema de multiplos casos de teste: dado dois inteiros em uma linha, a saída de sua soma em uma linha. Teremos os três formatos possíveis de entrada/saída.}
@@ -78,6 +87,8 @@ while(scanf("%d %d", &a &b) == 2)
   \end{itemize}
 \end{frame}
 
+\subsection{Número de casos e linhas em branco}
+
 \begin{frame} [fragile]
   \frametitle{Número de casos e linhas em branco}
   {\small Alguns problemas com múltiplos casos de teste requerem que a saída de cada caso de teste seja numerada sequencialmente. Outros requerem uma linha em branco após cada caso de teste. Vamos modificar o problema descrito anteriormente e incluir o número do processo na saída, começando de um, com este formato de saída: "Case [NUMERO]: [RESPOSTA]":}
@@ -130,6 +141,8 @@ while(scanf("%d %d", &a &b) != EOF) {
     \end{columns}
   \end{itemize}
 \end{frame}
+
+\subsection{Número variado de entradas}
 
 \begin{frame} [fragile]
   \frametitle{Número variado de entradas}
