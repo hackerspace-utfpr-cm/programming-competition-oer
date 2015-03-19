@@ -1,0 +1,112 @@
+\begin{frame}[parent={cmap:software-testing-foundations}, hasprev=false, hasnext=true]
+\frametitle{Casos de teste}
+\label{concept:test-case}
+\label{concept:input-domain}
+\label{concept:output-domain}
+\label{concept:input-data}
+\label{concept:output-data}
+
+\begin{block:concept}{Definição simplificada}
+Um caso de teste é constituído de um par de dados de teste (um conjunto de valores, um para cada variável) para ser os dados de entrada do programa e o resultado esperado.
+\end{block:concept}
+
+
+\begin{block:concept}{A melhor definição}
+Um caso de teste é geralmente definido como uma tupla $(d, S(d))$, onde:
+\begin{itemize}
+	\item $d \in D$ (e $D$ é conjunto de entrada), e;
+	\item $S(d)$ representa o resultado esperado para a entrada $d$ de acordo com a especificação $S$.
+\end{itemize}
+\end{block:concept}
+
+\hfill
+\refie{example:sort-test-cases}{\beamerbutton{Example: Casos de teste para um método de ordenação}}
+\refie{example:num-zero-test-cases}{\beamerbutton{Example: Casos de teste para o método numZero}}
+\end{frame}
+
+
+\begin{frame}[hasprev=false, hasnext=true]
+\frametitle{Casos de teste}
+\framesubtitle{Assessing a test case}
+\label{concept:test-case-success}
+\label{concept:test-case-failure}
+
+\begin{block:fact}{Casos de teste de sucesso}
+\begin{itemize}
+	\item Primeiro, um caso de teste bem-construido e executado é bem sucedida quando encontra erros.~\cite[p. 7]{myers:2004}
+
+	\item Ele também é bem sucedido quando estabelece eventualmente que não há mais erros que podem ser encontrados (como quando se aplica um critério de teste e satisfaz todos os requitido de teste).
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{Casos de teste sem sucesso}
+\begin{itemize}
+	\item Um caso de teste sem sucesso é aquele que faz com que um programa chegue ao resultado correto sem encontrar nenhum erro.
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:doctor-laboratory-test}{\beamerbutton{Analogia para casos de teste eficientes e ineficientes}}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Casos de teste}
+
+\begin{block:fact}{Ordem de execução}
+\begin{itemize}
+    \item Há dois tipos de casos de teste em relação a ordem de execução do teste:
+	\begin{itemize}
+		\item Caso de teste sequencial, e;
+		\item Caso de teste independete.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\label{concept:cascading-test-case}
+\frametitle{Casos de teste}
+\framesubtitle{Caso de teste sequencial}
+
+\begin{block:concept}{Definição}
+Casos de teste sequenciais são casos de testes que dependem uns dos outros.
+\end{block:concept}
+
+
+\begin{block:fact}{Vantagens e disvantagens}
+\begin{itemize}
+	\item A vantagem dos casos de teste sequencial é que cada caso de teste é normalmente pequeno e simples;
+
+	\item A disvatagem dos casos de teste sequencial é que se um teste falha, os testes subsequentes podem ser inválidos.
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:cascading-test-case}{\beamerbutton{Example: Casos de teste sequencial}}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\label{concept:independent-test-case}
+\frametitle{Casos de teste}
+\framesubtitle{Casos de teste independentes}
+
+\begin{block:concept}{Definição}
+Casos de teste independentes são totalmente autônomos.
+\begin{itemize}
+	\item Casos de teste independentes não dependem uns dos outros, nem exigir que outros testes fossem executado com sucesso.
+\end{itemize}
+\end{block:concept}
+
+\begin{block:fact}{Vantagens e disvantagens}
+\begin{itemize}
+	\item A vantagem dos casos de teste independentes é que qualquer número de testes pode ser executado em qualquer ordem;
+
+	\item A disvantagem dos casos de teste independentesque cada teste tende a ser maior e mais complexo e, portanto, mais difícil de criar, projetar e manter.
+\end{itemize}
+\end{block:fact}
+\end{frame}
