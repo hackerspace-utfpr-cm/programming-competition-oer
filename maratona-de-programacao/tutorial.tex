@@ -1,0 +1,69 @@
+\begin{frame}
+  \frametitle{Exemplo de algoritmo}
+    Leia dois valores inteiros, no caso para variáveis A e B. A seguir, calcule a soma entre elas e atribua à variável SOMA. A seguir escrever o valor desta variável.
+
+  \begin{center}
+    \textbf{Entrada}
+  \end{center}
+  O arquivo de entrada contém 2 valores inteiros.
+  
+  \begin{center}
+    \textbf{Saída}
+  \end{center}
+  Imprima a variável \textbf{SOMA} com todas as letras maiúsculas, com um espaço em branco antes e depois da igualdade seguido pelo valor correspondente à soma de A e B. Como todos os problemas, não esqueça de imprimir o fim de linha após o resultado, caso contrário, você receberá "Presentation Error".
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Entrada e saida padrão}
+  Como pegar a entrada? E como fazer a saída corretamente?
+  \begin{lstlisting}[language=c]
+int main () {
+  int A, B, SOMA;
+  while(scanf("%d %d", &A, &B) != EOF) {
+    SOMA = A + B;
+    printf("SOMA = %d\n", SOMA);
+  }
+  return 0;
+}
+  \end{lstlisting}
+  \begin{tabular}{ll}\\
+    Entrada padrão: &Saída padrão:\\
+    30 10 &SOMA = 40\\
+    -30 10 &SOMA = -20\\
+    0 0 &SOMA = 0\\
+  \end{tabular}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Comandos no Terminal}
+  \begin{enumerate}
+    \begin{columns}[T]
+      \begin{column}[T]{4.7cm}
+       \item {\small Criar uma arquivo com os dados de entrada. Para listar o que tem dentro do arquivo basta digitar: cat nome\_arquivo}
+       \begin{lstlisting}[basicstyle=\tiny]
+$ ls
+entrada  p  prog1.c
+$ cat entrada
+30 10
+-30 10
+0 0
+       \end{lstlisting}
+      \end{column}
+
+      \begin{column}[T]{5.2cm} 
+	\item {\small Compilar programa:}
+	\begin{lstlisting}[basicstyle=\tiny]
+$ gcc prog1.c -o p
+	\end{lstlisting}
+	\item {\small Ligar o arquivo de entrada com o programa principal:}
+	\begin{lstlisting}[basicstyle=\tiny]
+$ cat entrada| ./p
+SOMA = 40
+SOMA = -20
+SOMA = 0
+	\end{lstlisting}
+      \end{column}
+    \end{columns}
+  \end{enumerate}
+
+\end{frame}

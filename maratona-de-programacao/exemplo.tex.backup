@@ -11,7 +11,14 @@
   \
 
   \footnotesize Especula - se (mas ainda não comprovada) que este algoritmo terminará em n = 1 para cada inteiro n. Ainda, a conjectura mantém para todos os inteiros até pelo menos 1.000.000.\\
-  \footnotesize Para um n de entrada, a duração do ciclo de n é o número de números gerados até e incluindo a 1. No exemplo acima, a duração do ciclo de 22 é 16. Dado dois números i e j, você vai determinar a duração do ciclo máximo sobre todos os números entre i e j, incluindo ambas as extremidades.
+  
+  \
+  
+  \footnotesize Para um n de entrada, a duração do ciclo de n é o número de números gerados até e incluindo a 1. No exemplo acima, a duração do ciclo de 22 é 16.\\
+  
+  \
+  
+  \footnotesize Dado dois números i e j, você vai determinar a duração do ciclo máximo sobre todos os números entre i e j, incluindo ambas as extremidades.
 \end{frame}
 
 \begin{frame}[fragile]
