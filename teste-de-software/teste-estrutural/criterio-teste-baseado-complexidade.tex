@@ -1,0 +1,76 @@
+\begin{frame}[parent={cmap:structural-software-testing},hasnext=true,hasprev=true]
+\frametitle{Critérios de teste baseado em complexidade}
+\label{concept:complexity-based-test-criterion}
+
+\begin{block:concept}{Definição}
+Critérios de teste baseado em complexidade usa informações sobre a complexidade do programa
+a fim de obter os requisitos de teste
+\end{block:concept}
+
+\begin{block:fact}{Critérios de teste baseado em complexidade}
+\begin{itemize}
+	\item Um critério de teste baseado em complexidade bem conhecida é
+	o critério de McCabe.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\label{concept:mccabe-criterion}
+\frametitle{Critério baseado em complexidade}
+\framesubtitle{Critérios de McCabe}
+
+\begin{block:concept}{Definição}
+O critério de McCabe requer um conjunto de caminhos completos linearmente independentes
+do grafo de fluxo de controle para ser percorrido na execução do conjunto de teste.
+\end{block:concept}
+
+\begin{block:fact}{}
+\begin{itemize}
+	\item O critério de McCabe usa a complexidade ciclomática para obter o
+	conjunto de requisitos de teste;
+
+	\item Satisfazendo o critério de McCabe automaticamente garante tanto a
+	cobertura de decição (Todas as extremidade) e cobertura de declaração (todos os nós).
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}
+\label{procedure:mccabe-criterion}
+\frametitle{Critério baseado em complexidade}
+\framesubtitle{Critério de McCabe}
+
+\begin{block:procedure}{}
+\begin{enumerate}
+	\item Derivar o CFG do módulo de software;
+	\item Computar o grafo de complexidade ciclomática (C);
+	\item Selecionar um conjunto de caminhos C linearmente independentes:
+	\begin{enumerate}
+		\item Escolher um caminho básico (que deve ser um caminho completo):
+		\begin{enumerate}
+			\item Esse caminho deverá ser um caminho razoavelmente típico de execução
+			ao invés de um caminho de processamento de exceção;
+
+			\item A melhor escolha deve ser o caminho mais importante do
+			ponto de vista do analista.
+		\end{enumerate}
+
+		\item Para escolher o próximo caminho, altere o resultado da primeira decição
+		ao longo do caminho base, mantendo o número de outras
+		decisões da mesma forma que o caminho base;
+
+		\item Gerar o caminho remanescente através da variação das decisões restantes,
+		um por um.
+	\end{enumerate}
+	\item Criar um caso de teste para cada caminho base.
+\end{enumerate}
+\end{block:procedure}
+
+
+\hfill
+\hyperlink{example:mccabe}{\beamerbutton{Example: McCabe's criterion example}}
+\end{frame}

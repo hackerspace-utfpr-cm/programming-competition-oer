@@ -1,0 +1,134 @@
+\begin{frame}[parent={cmap:structural-software-testing},hasnext=true,hasprev=true]
+\frametitle{Critérios de teste de controle de fluxo}
+\label{concept:control-flow-test-criterion}
+
+\begin{block:concept}{Definição}
+\begin{itemize}
+	\item Critérios de teste de controle de fluxo emprega apenas características relacionadas
+	com a estrutura de controle do programa para determinar o conjunto de requisitos
+	de teste.
+
+	\item Critérios de teste de controle de fluxo identifica os caminhos de execução
+	dentro de um módulo e, em seguida, cria e executa os casos de testes para cobrir
+	esses caminhos.
+\end{itemize}
+\end{block:concept}
+
+\begin{block:fact}{Critérios de teste de fluxo de controle}
+\begin{itemize}
+	\item Todos os nós;
+	\item Todas as extremidades;
+	\item Todos os caminhos.
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block:fact}{Critérios de teste de fluxo de controle and JaBUTi}
+\begin{itemize}
+	\item Com relação ao controle de fluxo, JaBUTi suporta os seguintes critérios de teste:
+	todos os nós and todas as extremidades.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Critérios de teste de controle de fluxo}
+
+\begin{block:fact}{Limitações}
+\begin{itemize}
+	\item No critério de teste de fluxo de controle, o número de requisitos de teste
+	pode ser enorme e, portanto, intestável dentro de um período razoável de tempo:
+	\begin{itemize}
+		\item Toda decisão que dobra o número de caminhos; cada ciclo multiplica
+		os caminhos pelo número de iterações através do loop.
+	\end{itemize}
+
+	\item Os caminhos chamados na especificação pode simplesmente estar faltando em um módulo.
+
+    \item Defeitos podem exeistir na processo de instruções sem o módulo, mesmo
+	atravésdo fluxo de controle em si, é correta;
+
+    \item O módulo pode executar corretamente para quase todos os valores de dados, mas não consegue para alguns valores.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}
+\label{concept:all-nodes-criterion}
+\label{concept:all-nodes}
+\frametitle{Critérios de teste de controle de fluxo}
+\framesubtitle{Todos os nós}
+
+\begin{block:concept}{Definição}
+Todos os nós requer um conjunto de teste que executa pelo menos uma vez cada nó do 
+gráfico de fluxo de controle, o qual é equivalente a executar todos blocos de código de 
+um programa pelo menos uma vez.
+\end{block:concept}
+
+\hfill
+\refie{example:all-nodes}{\beamerbutton{Example: All-nodes example}}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Critérios de teste de controle de fluxo}
+\framesubtitle{Todos os nós}
+
+\begin{block:fact}{Limitações}
+\begin{itemize}
+	\item Mesmo que o critério de todos os nós é o mais simples critério de teste 
+	de estrutura, pode ser difícil satisfazer na prática:
+	\begin{itemize}
+		\item Muitas vezes os programas possuem códigos que é executado somente em circunstâncias
+		excepcionais de pouca memória , disco cheio, arquivos ilegíveis, conexões 
+		perdidas, etc;
+
+		\item Analistas podem achar difícil ou mesmo impossível simular
+		essas circunstâncias e, por conseguinte, o código que lida com esses problemas continuarão
+		a serem testados.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}
+\label{concept:all-edges-criterion}
+\label{concept:all-edges}
+\frametitle{Critérios de teste de controle de fluxo}
+\framesubtitle{Todas as extremidades}
+
+
+\begin{block:concept}{Definição}
+Todas as extremidades requer um conjunto de teste que atravessa pelo menos uma vez cada extremidade
+do gráfico de fluxo de controle, isto é, o conjunto de teste assegurar que cada
+instrução condicional assume valores verdadeiros e falsos, pelo menos uma vez.
+\end{block:concept}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Crtiério de teste de controle de fluxo}
+\framesubtitle{Todos os caminhos}
+\label{concept:all-paths-criterion}
+\label{concept:all-paths}
+
+\begin{block:concept}{Definição}
+Todos os caminhos requer um conjunto de teste que executa todos os possíveos caminhos de um gráfico de controle de fluxo.
+\end{block:concept}
+
+\begin{block:fact}{Limitações}
+\begin{itemize}
+	\item Para unidades de programa sem laços de repetição, os requisitos de teste dos
+	critérios de todos os caminhos é, em geral, pequeno o suficiente para que um caso de teste
+	possa ser realmente contruído para cada caminho;
+
+	\item Para unidades de programas com laços de repetição, os requisitos de teste para os critérios 
+	de todos os caminhos pode ser enorme e, assim, apresentar um complicado problema de teste.
+\end{itemize}
+\end{block:fact}
+\end{frame}
