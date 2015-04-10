@@ -1,0 +1,119 @@
+\begin{frame}[c,parent={cmap:software-testing}, hasprev=false, hasnext=false]
+\frametitle{Teste Funcional}
+\label{cmap:functional-testing}
+
+\insertcmap{teste-de-software/teste-funcional/Courses-SoftwareTesting-FunctionalTesting}
+\end{frame}
+
+
+
+\begin{frame}[parent={cmap:functional-testing}, hasprev=false, hasnext=true]
+\frametitle{Teste Funcional}
+\label{concept:functional-testing}
+
+\begin{block:concept}{Teste Funcional}
+Teste Funcional é uma técnica na qual o teste é baseado unicamente sobre os
+requisitos e especificações.
+\end{block:concept}
+
+\begin{block:fact}{Teste da caixa-preta}
+	\centering
+	\includegraphics[width=\textwidth]{resources/Functional testing/Black box testing (no requirements)}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=true]
+\frametitle{Teste Funcional}
+\label{concept:black-box}
+
+\begin{columns}[t]
+\column{.6\textwidth}
+\begin{block:fact}{Black box}
+\begin{itemize}
+	\item Teste Funcional considera o produtes em teste como uma caixa:
+	\begin{itemize}
+		\item Dos quais são conhecidos somente suas entradas e saídas;
+
+		\item Que só pode ser visualizado a partir do seu exterior.
+	\end{itemize}
+
+	\item Isso não requer conhecimento do caminho interno, estrutura ou 
+	implementação do software.
+\end{itemize}
+\end{block:fact}
+
+\column{.4\textwidth}
+\includegraphics[scale=.3]{resources/Teste Funcional/Black box}
+\end{columns}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Teste Funcional}
+\framesubtitle{Fases de teste}
+
+\begin{block:fact}{Fases de teste}
+\begin{itemize}
+	\item Teste Funcional pode ser aplicado em qualquer das fases de teste;
+
+	\item A abordagem do teste Funcional  permanece o mesmo, independente do tamanho
+	e da complexidade de entrada/saída do software(unidade, módulo, subsistema)
+	em teste.
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block:fact}{Fases de teste}
+\begin{itemize}
+	\item Na verdade, testes de software de grandes partes do software força o analista
+	a utilizar testes funcionais como há simplesmente muitos caminhos através do
+	software para aplicar outras técnicas de teste.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Teste Funcional}
+\framesubtitle{Limitações}
+
+\begin{block:fact}{Limitações}
+\begin{itemize}
+	\item Teste Funcional depende de uma boa especificação de requisitos de software;
+
+	\item Teste Funcional não é adequado para testar um processamento complexo
+	que requer os dados de uma entrada simples.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\frametitle{Teste Funcional}
+
+\begin{block:procedure}{Passos básicos para testes funcionais}
+\begin{enumerate}
+	\item São analisados os requisitos de software:
+	\begin{itemize}
+		\item Entradas válidas são escolhidas baseado nos requisitos de software
+		para determinar se o software processa-os corretamente;
+
+		\item Entradas inválidas também devem ser escolhidos para verificar que o software
+		detecta eles e trata-os corretamente.
+	\end{itemize}
+
+	\item Os produtos esperado para essas saídas são determinadas;
+
+	\item Casos de teste são construídos com as entradas selecionadas;
+
+	\item Os casos de teste são executados;
+
+	\item Saídas reais são comparados com os resultados esperados;
+
+	\item Uma determinação é feita como para o bom funcionamento do software.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
