@@ -1,0 +1,142 @@
+\begin{frame}[hasprev=false, hasnext=true, parent={concept:functional-testing}]
+\frametitle{Análise do valor limite}
+
+\begin{block:fact}{}
+\begin{itemize}
+	\item As experiências mostram que os casos de teste que exploram \textbf{condições
+	de limite} têm um pagamento maior que os casos de teste que não~\cite[p. 59]{myers:2004}.
+
+	\item Por isso, seria interessante ter um critério de teste que
+	explore tais situações.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=true]
+\frametitle{Análise do valor limite}
+\label{concept:boundary-value-analysis}
+
+\begin{block:concept}{Análise do valor limite}
+Análise do valor limite requer que os casos de testes sejam selecionados baseado no
+limite de cada classe de equivalência.
+\end{block:concept}
+
+\begin{block:fact}{Análise do valor limite e partição de equivalência}
+\begin{itemize}
+	\item Análise do valor limite é complementar a partição de equivalência;
+
+	\item Explora as condições de limite, tal com o o mesmo, acima e abaixo
+	dos limites da classe de equivalência.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Análise do valor limite}
+\framesubtitle{Limite para uma gama}
+
+\begin{block:fact}{Limite para uma gama}
+\begin{itemize}
+	\item The input for a test case for an input which boundary conditions
+	establish a range of values must be:
+	\begin{itemize}
+		\item in the limits of the range,
+		\item above and below the limits.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Análise do valor limite}
+\framesubtitle{Limite para uma gama}
+
+\begin{block}{Example of boundaries for a range}
+\begin{itemize}
+	\item The requirement states that ``the item count can be from 1 to 999''.
+
+	\item There are three equivalence classes:
+	\begin{itemize}
+		\item Valid class: item count between 1 and 999 (including the number
+		1 and 999).
+		\item Invalid classes:
+		\begin{itemize}
+			\item item count with a value less than 1
+			\item item count with a value greater than 999.
+		\end{itemize}
+	\end{itemize}
+
+	\item The values to be tested are:
+	\begin{itemize}
+		\item 0 (just below/out the range)
+		\item 1 (just in the range considering the lower limit)
+		\item 999 (just in the range considering the upper limit)
+		\item 1000 (just above/out the range)
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Análise do valor limite}
+\framesubtitle{Boundary for a sequence}
+
+\begin{block:fact}{Boundary for a sequence}
+\begin{itemize}
+	\item The input of a test case for an input which boundary conditions
+	establish a sequence of values must be:
+	\begin{itemize}
+		\item in the limit,
+		\item and one unit below and above the limit.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Análise do valor limite}
+\framesubtitle{Boundary for a sequence}
+
+\begin{block}{Example}
+\begin{itemize}
+	\item The requirement states that ``one throught six owners can be listed
+	for the automobile''.
+
+	\item There are three equivalence classes:
+	\begin{itemize}
+		\item Valid class: list of owners with one to six names.
+		\item Invalid classes:
+		\begin{itemize}
+			\item empty owner list,
+			\item owner list with more than six names.
+		\end{itemize}
+	\end{itemize}
+
+		\item The values to be tested are:
+	\begin{itemize}
+		\item 0 (one unit below the limit)
+		\item 1 (just in the limit considering the lower limit)
+		\item 5 (just in the limit considering the upper limit)
+		\item 7 (one unit above the limit)
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\frametitle{Análise do valor limite}
+\framesubtitle{Limitations}
+
+\begin{block:fact}{Limitations}
+\begin{itemize}
+	\item Análise do valor limite does not explore input condition combinations.
+\end{itemize}
+\end{block:fact}
+\end{frame}
