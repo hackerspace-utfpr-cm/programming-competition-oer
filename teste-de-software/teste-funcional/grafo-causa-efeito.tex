@@ -1,0 +1,243 @@
+\begin{frame}[parent={concept:functional-testing}, hasprev=false, hasnext=true]
+\frametitle{Grafo causa-efeito}
+\framesubtitle{concept:case-effect-graph}
+
+\begin{block:concept}{Grafo de causa-efeito}
+Grafo de causa-efeito estabelece requisitos de teste baseado nas possíveis
+combinações das condições de entrada.
+\end{block:concept}
+
+
+\begin{block:fact}{Combinação das condições de entrada
+\begin{itemize}
+	\item Você pode combinar e selecionar condições de entrada e testar tais
+	combinações usando partição de equivalência;
+
+	\item No entanto, como o número de combinações possíveis é geralmente alto,
+	é provável que os subconjuntos de combinações para ser testado será escolhido
+	arbitrariamente:
+	\begin{itemize}
+		\item Isto conduziria a um teste ineficiente.
+	\end{itemize}
+
+	\item Grafo de causa-efeito ajuda na seleção, de forma sistemática,
+	um conjunto de alto rendimento de casos de teste~\cite[p. 66]{myers:2004}.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=true]
+\frametitle{Grafo de causa-efeito}
+
+\begin{block:fact}{Grafo de causa-efeito}
+\begin{itemize}
+	\item O grafo de causa-efeito cria um grafo booleano que é uma forma
+	de linguagem para descrever as especificações do software.
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block:fact}{Causa}
+\begin{itemize}
+	\item No grafo de causa-efeito, as causas correspondes a:
+	\begin{itemize}
+		\item Condições de entrada de uma dada classe de equivalência;
+		\item Incentivo;
+		\item Ou qualquer outra coisa que causa uma saída do programa em fase de teste.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block:fact}{Efeito}
+\begin{itemize}
+	\item No grafo de causa-efeito, os efeitos são:
+	\begin{itemize}
+		\item As saídas;
+		\item Mudanças de estado do sistema;
+		\item Ou qualquer resultado observável.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Grafo de causa-efeito}
+
+\begin{block:procedure}{Como criar o grafo}
+\begin{enumerate}
+	\item Identificar as possíveis condições de entrada (causas) e as possíveis
+	ações do produto (efeito):
+	\begin{itemize}
+		\item Dica: classes de equivalência são uma causa;
+		\item Associar um identificar único para cada causa e efeito encontrado (a identificação numérica é boa).
+	\end{itemize}
+
+	\item Construa um grafo de causa-efeito relacionando causas com efeitos identificados.
+
+    \item Impossíveis combinações de causa-efeito devem ser anotadas no grafo.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Grafo de causa-efeito}
+
+\begin{block:fact}{Elementos do grafo de causa-efeito}
+\begin{itemize}
+	\item Cada nó do grafo representa uma condição de entrada (causa) e
+	os resultados (efeito);
+
+	\item Cada nós pode ser atribuído o valor 0 ou 1:
+	\begin{itemize}
+		\item 0 representa o estado "ausente";
+		\item 1 representa o estado "presente".
+	\end{itemize}
+
+	\item As relações entre os nós é representada usando as funções:
+	\begin{itemize}
+		\item Identidade;
+		\item Not;
+		\item Or;
+		\item And.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Grafo de causa-efeito}
+
+
+\begin{columns}[t]
+\column{.4\textwidth}
+\begin{block:fact}{Funções booleanas Unary}
+\begin{tabular}{l|c|c}
+\textbf{Função}			& \textbf{A}	& \textbf{Resultado}\\\hline\hline
+\multirow{2}{*}{Identidade} 	& 0 			& 0\\
+							& 1 			& 1\\\hline\hline
+\multirow{2}{*}{Not}		& 0 			& 1\\
+							& 1				& 0\\
+\end{tabular}
+\end{block:fact}
+
+\qquad
+\column{.5\textwidth}
+\begin{block:fact}{Função booleano N-ary}
+\begin{tabular}{l|c|c|c}
+\textbf{Função}			& \textbf{A}	& \textbf{B}	& \textbf{Resultado}\\\hline\hline
+\multirow{4}{*}{Or} 		& 0 			& 0				& 0\\
+							& 0 			& 1				& 1\\
+							& 1 			& 0				& 1\\
+							& 1 			& 1				& 1\\\hline\hline
+\multirow{4}{*}{And}		& 0 			& 0				& 0\\
+							& 0 			& 1				& 0\\
+							& 1 			& 0				& 0\\
+							& 1 			& 1				& 1\\
+\end{tabular}
+\end{block:fact}
+\end{columns}
+
+\end{frame}
+
+
+
+% \begin{frame}
+% \frametitle{Grafo de causa-efeito}
+% 
+% \begin{block}{Function symbols}
+% \includegraphics[scale=.04]{resources/Grafo de causa-efeito/Grafo de causa-efeito symbols}
+% \end{block}
+% 
+% \begin{block}{Restrictions symbols}
+% \includegraphics[width=\textwidth]{resources/Grafo de causa-efeito/Grafo de causa-efeito restrictions}
+% \end{block}
+% 
+% \end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Grafo de causa-efeito}
+\label{procedure:cause-effect-graph}
+
+\begin{block:procedure}{Como criar o grafo}
+\begin{enumerate}
+	\item Para verificar se o grafo de causa-efeito está correto, deve ser atribuídos
+	os valores 0 e 1 para as causas e verificar se os efeitos têm os valores corretos.
+\end{enumerate}
+\end{block:procedure}
+
+
+\hfill
+\refie{example:cause-effect-graph}{\beamerbutton{Example}}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Grafo de causa-efeito}
+
+\begin{block:procedure}{Como criar a tabela de decisão}
+\begin{enumerate}
+	\item Converter o grafo de causa-efeito em uma tabela de decisão (de onde os casos de
+	teste são derivados):
+	\begin{enumerate}
+		\item Selecionar um efeito que deve ter valor 1;
+
+		\item Rastrear o grafo de causa-efeito a partir do efeito escolhido, encontrar
+		todas as combinações que faz com que o efeito tenha o valor 1:
+		\begin{enumerate}
+				\item No grafo de causa-efeiro, se um nó do tipor OR
+				e a saída deve ser 1, nunca atribuir mais de uma entrada com
+				o valor 1 simultaneamente;
+
+				\item No grafo de causa-efeito, se um nó é do tipo AND
+				e a saída deve ser 0, todas as combinações de entrada que
+				retorna uma saída 0 deve ser enumerada. No entanto, se uma das
+				entradas é 0 e uma ou mais das entradas é 1,
+				não é necessário enumerar todas as codições nas quais as entradas
+				são iguais a 1.
+		\end{enumerate}
+	\end{enumerate}
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Grafo de causa-efeito}
+
+\begin{block:procedure}{Como criar a tabela de decisão}
+\begin{enumerate}
+	\item (Continuação) Converter o grafo de causa-efeito em uma tabela de decisão
+	(a partir do qual são derivados os casos de teste);
+	\begin{enumerate}
+		\item Criar uma coluna na tabela de decisão para cada combinação causa;
+
+		\item Especificar, para cada combinação causa, o estado de cada efeito
+		único, marcando-os na tabela.
+	\end{enumerate}
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+% \begin{frame}[hasprev=true, hasnext=false]
+% \frametitle{Grafo de causa-efeito}
+%
+% \begin{block:fact}{}
+% \begin{itemize}
+% 	\item The definition of the cause-effect graph helps to point out
+% 	incompleteness and ambiguities in the software requirement
+% 	specification~\cite[p. 66]{myers:2004}.
+% \end{itemize}
+% \end{block:fact}
+% \end{frame}
+

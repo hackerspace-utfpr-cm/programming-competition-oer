@@ -1,0 +1,88 @@
+\begin{frame}[parent={cmap:software-testing}, hasprev=false, hasnext=true]
+\frametitle{Teste estrutural}
+\label{cmap:structural-software-testing}
+\label{cmap:structural-testing}
+
+\insertcmap{teste-de-software/teste-estrutural/Courses-SoftwareTesting-StructuralTesting}
+\end{frame}
+
+
+
+\begin{frame}[parent={cmap:structural-software-testing},hasnext=true,hasprev=true]
+\frametitle{Teste estrutural}
+\label{concept:structural-testing}
+
+\begin{block:concept}{Definição}
+Teste estrutural é uma téncanica na qual testamos baseado na parte interna, estrutura, e implementação do software em teste.
+\end{block:concept}
+
+\begin{block:fact}{Teste da caixa branca}
+Como o teste estrutural deve ver os detalhes internos do software, ele também é conhecido como teste da caixa branca.
+\end{block:fact}
+
+\begin{block:fact}{Por que o teste estrutural é importante?}
+\begin{itemize}
+	\item O teste estrutural é muito eficiente em determinar as falhas lógicas ou de programação em fase de teste, especialmente no nivel da unidade.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Teste estrutural}
+
+\begin{block:concept}{Limitações}
+\begin{itemize}
+	\item Teste estrutural requer habilidades de programação detalhados:
+	\begin{itemize}
+		\item Teste estrutural requer a intervenção do programador, a fim de determinar os caminhos inviáveis.
+	\end{itemize}
+
+	\item O número de caminhos de execução pode ser tão grande que eles não podem ser testados;
+
+	\item Os casos de teste escolhidos podem não detectar erros de sensibilidade dos dados.
+	
+
+	\item Teste estrutural assume que o fluxo de controle está correta (ou muito perto de ser corrigida). Como os testes são baseados nos caminhos existente. Caminhos não existentes geralmente não podem ser descolbertos através desse teste estrutucal
+\end{itemize}
+\end{block:concept}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Teste estrutural}
+
+\begin{block:fact}{Quando eu posso usar o teste estrutural?}
+\begin{itemize}
+	\item Test estrutural pode ser aplicado no teste unitário, integração, sistema e de fases.
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block:fact}{Teste estrutural e fases de teste}
+\begin{itemize}
+	\item Teste estrutural, quando aplicado na fase de teste de unidade, envolve caminhos que estão dentro de um módulo;
+
+	\item Teste estrutural, quando aplicado na fase de teste de integração, envolve caminhos que estão entre os módulos do subsistema e caminhos entre os subsistemas dentro de sistemas;
+
+	\item Teste estrutural, quando aplicado na fase de teste de sistema, envolve caminhos que estão entre o sistema inteiro.
+	
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Teste estrutural}
+
+\begin{block:procedure}{Atividades de teste}
+\begin{enumerate}
+	\item O programa em teste em fase de implementação é analisado;
+	\item Caminhos através do programa em teste são identificados;
+	\item Entradas são escolhicas para fazer com que o programa em fase de teste execute o caminho selecionado. Isto é chamado de caminho de sensibilização;
+	\item As saídas esperadas para essas entradas são determinadas;
+	\item Os teste são executados;
+	\item As saídas são comparadas com o resutado esperado, verificando se a saída real é correta.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}

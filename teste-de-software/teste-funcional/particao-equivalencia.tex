@@ -1,0 +1,276 @@
+\begin{frame}[ parent={concept:functional-testing}, hasprev=false, hasnext=true]
+\frametitle{Partição de equivalência}
+\label{concept:equivalence-partition}
+
+\begin{block:concept}{Partição de equivalência}
+Partição de equivalência divide as condições de entrada, identificados a partir do
+produto, em classes de equivalência válidos e inválidos.
+\end{block:concept}
+
+\begin{block:fact}{Análise racional}
+\begin{itemize}
+	\item Considera cada elemento de uma determinada classe de equivalência como equivalente:
+	\begin{itemize}
+		\item Se um certo elemento de uma determinada classe é apto para
+		detectar uma fala, todos os outros elementos dessa mesma equivalência de classe
+		também são aptos para detectar as mesmas falhas.
+	\end{itemize}
+
+	\item Assim, o estabelecimento correto das partições é essencial para este critério:
+	\begin{itemize}
+		\item No entanto, os requisitos muitas vezes faltam detalhes para realizar isso corretamente.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}[hasnext=true, hasprev=true]
+\frametitle{Partição de equivalência}
+
+\begin{block:fact}{Partição de equivalência}
+\begin{itemize}
+	\item Partição de equivalência requer um conjunto de teste para cobrir:
+	\begin{itemize}
+		\item as classes de equivalências válidas (\textbf{um} caso de teste pode abranger
+		\textbf{mais de uma} classes válidas);
+
+		\item E \textbf{um} caso de teste para cobrir \textbf{cada} uma das
+		classes de equivalência inválidas.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{Por que um caso de teste para cada classe inválidade?}
+\begin{itemize}
+	\item Classes inválidas são, em geral, relacionada a um código de implementação
+	especial apra produzir diferentes mensagens de erro;
+
+	\item Combinando várias classes inválidas em um único caso de teste poderão
+	ocultar essas mensagens de erro.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Partição de equivalência}
+\label{procedure:equivalence-partition}
+
+\begin{block:fact}{Dois Passos}
+A partição de equivalência é organizada em duas fases:
+\begin{itemize}
+	\item Identificação das classes de equivalências;
+	\item Definição dos casos de teste para as classes identificadas.
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block:procedure}{Procedimento}
+\begin{enumerate}
+	\item Identiicar as classes de equivalências:
+	\begin{enumerate}
+		\item Identiicar as condições de entradas relevantes;
+		\item Particionar cada condição em dois ou mais grupos.
+	\end{enumerate}
+
+	\item Definir os casos de teste para cobrir essas classes:
+	\begin{enumerate}
+		\item Atribua um número para cada as classes;
+		\item Defina casos de teste para cobrir o maior número de classes válidads
+		quanto possível, até que cada classes valídas for avaliadas;
+		\item Para todas as classes inválidas, projetar um caso de teste específico.
+	\end{enumerate}
+\end{enumerate}
+\end{block:procedure}
+
+\hfill
+\refie{example:equivalence-partition}{\beamerbutton{Example}}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Partição de equivalência}
+\framesubtitle{Orientações de partição}
+
+\begin{block:fact}{Orientação de particionamento}
+\begin{itemize}
+	\item A identificação das partições equivalentes é, amplamente, um
+	processo heurístico;
+
+	\item Para algumar situações, há algumas orientações bem estabelecidas
+	que podem ser utilizados.
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{Situações típicas}
+\begin{itemize}
+	\item Contantes;
+	\item Enumeração;
+	\item Sequências;
+	\item Ranges ?????????
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Partição de equivalência}
+\framesubtitle{Orientações de partição}
+
+\begin{block:fact}{Constantes}
+\begin{itemize}
+	\item Se uma condição de entrada especifica uma única restrição ou valor
+	constante para o valor, haverá duas classes:
+	\begin{itemize}
+		\item Um válido para os valores com constantes;
+		\item Um inválido para os valores sem a constante.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+\begin{block}{Exemplo}
+\begin{itemize}
+	\itemO requisito afirma que ``o primeiro caracter do identificador
+	deve ser uma letra'';
+
+	\item Há duas classes de equivalência:
+	\begin{itemize}
+		\item Classe válida: a primeira letra do identificador é uma letra;
+		\item Classe inválida: a primeira letra do identificador não é uma letra.
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Partição de equivalência}
+\framesubtitle{Orientações de partição}
+
+\begin{block:fact}{Enumeração}
+\begin{itemize}
+	\item Se uma condição de entrada especifica um conjunto de N valores de entrada e há
+	uma razão para acreditar que esse programa trata cada um de forma diferente, não
+	haverá N + 1 classes:
+	\begin{itemize}
+		\item N classes válidas para cada valor de entrada aceitável;
+		\item Um inválido para o valor que não esta na enumeração.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+\begin{block}{Exaemplo}
+\begin{itemize}
+	\item Os requisitos afirmam que ``O tipo dos veículos podem ser ônibus, 
+	caminhão, táxi, a pé''.
+
+	\item Há cinco classes de equivalência:
+	\begin{itemize}
+		\item Classes válidas: uma classe para cada tipo de veículo(ônibus, caminhão
+		taxi, a pé);
+		\item Classes inválidas: uma classe para um veículo não presente na
+		enumeração (avião).
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Partição de equivalência}
+\framesubtitle{Orientações de partição}
+
+\begin{block:fact}{Sequência}
+\begin{itemize}
+	\item Se uma condição de entrada especifica uma sequência de valores,
+	existem três partições:
+	\begin{itemize}
+		\item Um válido, para os valores dentro da sequência;
+
+		\item Dois inválidos, para valores inferiores ao valor inferior e maior
+		que o valor máximo da sequência.
+		range. ?????????????????????
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block}{Exemplo}
+\begin{itemize}
+	\item O requisito afirma que ``um a seis proprietários podem ser listados
+	para o automóvel'';
+
+	\item Existem três classes de equivalências:
+	\begin{itemize}
+		\item Classe válida: lista de proprietários com um a seis nomes;
+		\item Classes inválidas:
+		\begin{itemize}
+			\item Lista de proprietários vázia;
+			\item Lista de proprietários com mais de seis nomes.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Partição de equivalência}
+\framesubtitle{Orientações de partição}
+
+\begin{block:fact}{Range}
+\begin{itemize}
+	\item If the input condition specifies a range of values, there are three
+	partitions:
+	\begin{itemize}
+		\item One valid, for the values within the range.
+
+		\item Two invalid, for values lower than the bottom value and greater
+		than top value of the range.
+		range.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block}{Example}
+\begin{itemize}
+	\item The requirement states that ``the item count can be from 1 to 999''.
+
+	\item There are three equivalence classes:
+	\begin{itemize}
+		\item Valid class: item count between 1 and 999 (including the number
+		1 and 999).
+		\item Invalid classes:
+		\begin{itemize}
+			\item item count with a value less than 1,
+			\item item count with a value greater than 999.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Partição de equivalência}
+\framesubtitle{Limitations}
+
+\begin{block:fact}{Limitations}
+\begin{itemize}
+	\item The equivalence partition assumption is too strong in practice.
+	\begin{itemize}
+		\item It is quite common to have data-sensible faults which require a
+		specific value inside an equivalence class in order to be detected.
+	\end{itemize}
+
+	\item Partição de equivalência does not explore input condition combinations.
+\end{itemize}
+\end{block:fact}
+\end{frame}

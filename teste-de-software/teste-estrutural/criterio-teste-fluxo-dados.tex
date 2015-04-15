@@ -1,0 +1,105 @@
+\begin{frame}[parent={cmap:structural-software-testing},hasnext=true,hasprev=true]
+\frametitle{Critério de teste de fluxo de dados}
+\label{concept:data-flow-test}
+\label{concept:data-flow-test-criterion}
+
+\begin{block:concept}{Definição}
+Critério de teste de fluxo de dados explora a interação envolvendo definições de
+variáveis e outras referências (usos) para tais definições para estabelecer os
+requisitos de teste.
+\end{block:concept}
+
+
+\begin{block:fact}{}
+\begin{itemize}
+    \item Critério de teste de fluxo de dados visa detectar falhas relacionadas com
+	as definições e uso de variáveis em um programa, ou seja, o seu objetivo é o
+	fluxo de dados em vez do fluxo de controle de um programa:
+	\begin{itemize}
+		\item Teste de fluxo de dados é uma abordagem poderosa para detectar o uso indevido
+		de valores de dados devido a erro de condificação.
+	\end{itemize}
+
+	\item Critério de teste de fluxo de dados complementa o critério de teste de fluxo de controle.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Critério de teste de fluxo de dados}
+\framesubtitle{Todas-definições}
+\label{concept:all-defs}
+\label{concept:all-defs-criterion}
+
+\begin{block:concept}{Definição}
+O Todas-Definições requer que uma conjunto de fluxo de dados para cada definição
+de variável a ser exercida, pelo menos uma vez, por um caminho definição-limpa em
+relação a c-uso ou p-uso.
+\end{block:concept}
+\end{frame}
+
+
+\begin{frame}
+\label{concept:all-uses}
+\label{concept:all-uses-criterion}
+\frametitle{Critério de teste de fluxo de dados}
+\framesubtitle{Todos-usos}
+
+\begin{block:concept}{Definição}
+O Todos-Usos requer que todas as associações de fluxo de dados entre uma
+definição de variável e todas os usos subsequentes (c-usos e p-usos) deve ser
+exercido pelo menos por um caminho definição-limpa.
+\end{block:concept}
+
+\hfill
+\refie{example:identifier-all-uses}{\beamerbutton{Example: All-Uses test requirements for Identifier}}
+
+\end{frame}
+
+
+
+\begin{frame}
+\label{concept:all-p-uses}
+\label{concept:all-p-uses-criterion}
+\frametitle{Critério de teste de fluxo de dados}
+\framesubtitle{Todos-P-Usos}
+
+\begin{block:concept}{Definição}
+O Todos-P-Usos requer que uma conjunto de fluxo de dados para cada uso
+afirmativo de uma variável deve ser executada pelo menos uma vez.
+\end{block:concept}
+\end{frame}
+
+
+
+\begin{frame}
+\label{concept:all-c-uses}
+\label{concept:all-c-uses-criterion}
+\frametitle{Critério de teste de fluxo de dados}
+\framesubtitle{Todos-C-Usos}
+
+\begin{block:concept}{Definição}
+O Todos-C-Usos requer que uma conjunto de fluxo de dados para cada uso
+computacional de uma variável deve ser executada pelo menos uma vez.
+\end{block:concept}
+\end{frame}
+
+
+
+\begin{frame}[hasnext=false]
+\label{concept:all-pot-uses}
+\label{concept:all-pot-uses-criterion}
+\frametitle{Critério de teste de fluxo de dados}
+\framesubtitle{Todos-Pot-Usos}
+
+\begin{block:concept}{Definição}
+O Todos-Pot-Usos requer para cada nó i contendo uma definição de
+uma variável x que para todo nó e extremidade que possa ser alcançado a partir de i por um
+caminho definição-limpa com relação a x para ser exercido.
+\end{block:concept}
+
+\hfill
+\refie{example:identifier-all-pot-uses}{\beamerbutton{Example: All-Potential-Uses test requirements for Identifier}}
+\end{frame}

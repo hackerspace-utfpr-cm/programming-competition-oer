@@ -1,0 +1,94 @@
+\begin{frame}[parent={cmap:software-testing}, hasprev=false, hasnext=true]
+\frametitle{Teste estrutural}
+\label{cmap:structural-software-testing}
+\label{cmap:structural-testing}
+
+\insertcmap{Courses-SoftwareTesting-StructuralTesting}
+\end{frame}
+
+
+
+\begin{frame}[parent={cmap:structural-software-testing},hasnext=true,hasprev=true]
+\frametitle{Teste estrutural}
+\label{concept:structural-testing}
+
+\begin{block:concept}{Definição}
+Teste estrutural é uma téncanica na qual testamos baseado na parte interna, estrutura, e implementação do software em teste.
+\end{block:concept}
+
+\begin{block:fact}{Teste da caixa branca}
+Como o teste estrutural deve ver os detalhes internos do software, ele também é conhecido como teste da caixa branca.
+\end{block:fact}
+
+\begin{block:fact}{Por que o teste estrutural é importante?}
+\begin{itemize}
+	\item O teste estrutural é muito eficiente em determinar as falhas lógicas ou de programação em fase de teste, especialmente no nivel da unidade.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Teste estrutural}
+
+\begin{block:concept}{Limitations}
+\begin{itemize}
+	\item Teste estrutural requer habilidades de programação detalhados:
+	\begin{itemize}
+		\item Teste estrutural requer a intervenção do programador, a fim de determinar os caminhos inviáveis.
+	\end{itemize}
+
+	\item O número de caminhos de execução pode ser tão grande que eles não podem ser testados;
+
+	\item Os casos de teste escolhidos podem não detectar erros de sensibilidade dos dados.
+	
+
+	\item Teste estrutural assume que o fluxo de controle está correta (ou muito perto de ser corrigida). Como os testes são baseados nos caminhos existente. Caminhos não existentes 
+\end{itemize}
+\end{block:concept}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Teste estrutural}
+
+\begin{block:fact}{When can I use structural testing?}
+\begin{itemize}
+	\item Teste estrutural can be applied at unit, integration, and system
+	testing phases.
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block:fact}{Teste estrutural and test phases}
+\begin{itemize}
+	\item Teste estrutural, when applied at the unit testing phase,
+	involves paths that are within a module.
+
+	\item Teste estrutural, when applied at the integration testing phase,
+	involves paths that are between modules within subsystems and paths
+	between subsystems within systems.
+
+	\item Teste estrutural, when applied at the system testing phase,
+	involves paths that are between entire systems.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Teste estrutural}
+
+\begin{block:procedure}{Test activities}
+\begin{enumerate}
+	\item The program under testing implementation is analyzed.
+	\item Paths through the program under testing are identified.
+	\item Inputs are chosen to cause the program under testing to execute
+	selected paths. This is called path sensibilization.
+	\item Expected outputs for those inputs are determined.
+	\item The tests are run.
+	\item Actual outputs are compared with the expected outputs, verifying if
+	the the actual output is correct.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}

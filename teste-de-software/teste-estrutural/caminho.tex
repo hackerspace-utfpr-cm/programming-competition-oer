@@ -1,0 +1,63 @@
+\begin{frame}[parent={cmap:structural-software-testing},hasnext=true,hasprev=true]
+\frametitle{Caminho}
+\label{concept:path}
+
+\begin{block:concept}{Definição informal}
+Um caminho é uma sequência de instruções.
+\end{block:concept}
+
+\begin{block:concept}{Definição}
+Um caminho é uma sequência finita de nós $(n_1, n_2, . . . , nk)$,
+$k \geqslant 2$, de modo que existe uma aresta de $n_i$ a $n_i + 1$ para
+$i = 1, 2, ... , k - 1$.
+\end{block:concept}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Caminho}
+\framesubtitle{Caminho executável e inviável}
+\label{concept:infeasible-path}
+\label{concept:missing-path}
+
+\begin{block:concept}{Definição}
+Um caminho executável é um caminho no qual existe um dado de entrada que pode executá-lo.
+\end{block:concept}
+
+\begin{block:concept}{Definição}
+Um caminho inviável é um caminho que, para qualquer valor de entrada, não pode ser executado.
+\end{block:concept}
+
+\begin{block:fact}{Limitações e implicações}
+\begin{itemize}
+	\item É impossível determinar, automaticamente, caminhos inviáveis;
+
+	\item Qualquer caminho completo que incluir um caminho inviável é um caminho inviável.
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:identifier-infeasible-path}{\beamerbutton{Example: Infeasible path example for Identifier}}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Caminho}
+\framesubtitle{Definition-clear path}
+\label{concept:definition-clear-path}
+
+\begin{block:concept}{Definição informal}
+A caminho livre-definição é um caminho que nenhuma outra definição de variável é feita.
+\end{block:concept}
+
+\begin{block:concept}{Definição}
+A caminho livre-definição com relação a uma variável $x$ é um caminho entre dois 
+nós $A$ e $B$, sendo $x$ definido em $A$, com uma utilização em $B$ e com qualquer
+outra definição de $x$ nos outros nós presentes no caminho entre $A$ e
+$B$.
+\end{block:concept}
+
+\hfill
+\refie{example:identifier-def-clear-path}{\beamerbutton{Example: Definição-clear path for Identifier}}
+\end{frame}
