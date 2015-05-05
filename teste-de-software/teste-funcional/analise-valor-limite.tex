@@ -52,28 +52,27 @@ limite de cada classe de equivalência.
 
 \begin{frame}
 \frametitle{Análise do valor limite}
-\framesubtitle{Limite para uma gama}
+\framesubtitle{Limite para uma faixa de valores}
 
-\begin{block}{Example of boundaries for a range}
+\begin{block}{Exemplos de limite de um intervalo}
 \begin{itemize}
-	\item The requirement states that ``the item count can be from 1 to 999''.
+	\item A exigência afirma que "a contagem de item pode ser de 1 a 999"
 
-	\item There are three equivalence classes:
+	\item Há três classes de equivalência:
 	\begin{itemize}
-		\item Valid class: item count between 1 and 999 (including the number
-		1 and 999).
-		\item Invalid classes:
+		\item Classe válida: contagem de itens entre 1 e 999 (incluindo o número 1 e 999).
+		\item Classes inválidas:
 		\begin{itemize}
-			\item item count with a value less than 1
-			\item item count with a value greater than 999.
+			\item Contagem do item com um valor menor que 1;
+			\item Contagem do item com um valor maior que 999.
 		\end{itemize}
 	\end{itemize}
 
-	\item The values to be tested are:
+	\item Os valores a serem testados são:
 	\begin{itemize}
-		\item 0 (just below/out the range)
-		\item 1 (just in the range considering the lower limit)
-		\item 999 (just in the range considering the upper limit)
+		\item 0 (logo abaixo/fora do intervalo);
+		\item 1 (apenas no intervalo considerando o limite inferior);
+		\item 999 (apenas no intervalo considerando o limite superior);
 		\item 1000 (just above/out the range)
 	\end{itemize}
 \end{itemize}
