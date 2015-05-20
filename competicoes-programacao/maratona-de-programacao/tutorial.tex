@@ -38,7 +38,7 @@ int main () {
   \frametitle{Comandos no Terminal}
   \begin{enumerate}
     \begin{columns}[T]
-      \begin{column}[T]{4.7cm}
+      \begin{column}[T]{4.5cm}
        \item {\small Criar uma arquivo com os dados de entrada. Para listar o que tem dentro do arquivo basta digitar: cat nome\_arquivo}
        \begin{lstlisting}[basicstyle=\tiny]
 $ ls
@@ -50,7 +50,7 @@ $ cat entrada
        \end{lstlisting}
       \end{column}
 
-      \begin{column}[T]{5.2cm} 
+      \begin{column}[T]{4.5cm} 
 	\item {\small Compilar programa:}
 	\begin{lstlisting}[basicstyle=\tiny]
 $ gcc prog1.c -o p
@@ -66,4 +66,68 @@ SOMA = 0
     \end{columns}
   \end{enumerate}
 
+\end{frame}
+
+\begin{frame}
+ \frametitle{Exemplo Python}
+Executar: cat valor1.txt | python Teste.py\\
+valor1.txt contem o numero de vezes que sera executado a soma\\
+valor2.txt depende do final do arquivo para saber quantas vezes ira executar a soma
+
+  \begin{columns}[T]
+    \begin{column}[T]{4cm}
+     valor1.txt contém:
+     \begin{tabular}{ll}
+      2 &\\
+      5 &6\\
+      7 &8\\
+     \end{tabular}
+    \end{column}
+
+    \begin{column}[T]{4cm}
+     valor2.txt contém:
+     \begin{tabular}{ll}
+      5 &6\\
+      7 &8\\
+     \end{tabular}
+    \end{column}
+
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+ \begin{lstlisting}[language=Python]
+import sys
+
+def soma(x, y):
+  return x + y
+
+if __name__ == "__main__":
+
+  #Metodo 1 -> use valor1.txt
+  n = input()
+  i = 0
+  while(i < n):
+    x = raw_input().split(' ')
+    s = soma(int(x[0]),int(x[1]))
+    print s
+    i+=1
+ \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+ \begin{lstlisting}[language=Python]
+import sys
+
+def soma(x, y):
+  return x + y
+
+if __name__ == "__main__":
+
+  #Metodo 2 -> use valor2.txt
+  for value in sys.stdin:
+    ##Pula o indice 1 pois ele pega o espaco
+    s = soma(int(value[0]),int(value[2]))
+    print s
+ \end{lstlisting}
 \end{frame}

@@ -42,7 +42,7 @@ produto, em classes de equivalência válidos e inválidos.
 \end{itemize}
 \end{block:fact}
 
-\begin{block:fact}{Por que um caso de teste para cada classe inválidade?}
+\begin{block:fact}{Por que um caso de teste para cada classe inválida?}
 \begin{itemize}
 	\item Classes inválidas são, em geral, relacionada a um código de implementação
 	especial apra produzir diferentes mensagens de erro;
@@ -109,7 +109,7 @@ A partição de equivalência é organizada em duas fases:
 	\item Contantes;
 	\item Enumeração;
 	\item Sequências;
-	\item Ranges ?????????
+	\item Faixa de valoress.
 \end{itemize}
 \end{block:fact}
 \end{frame}
@@ -132,7 +132,7 @@ A partição de equivalência é organizada em duas fases:
 
 \begin{block}{Exemplo}
 \begin{itemize}
-	\itemO requisito afirma que ``o primeiro caracter do identificador
+	\item O requisito afirma que ``o primeiro caracter do identificador
 	deve ser uma letra'';
 
 	\item Há duas classes de equivalência:
@@ -222,16 +222,13 @@ A partição de equivalência é organizada em duas fases:
 \frametitle{Partição de equivalência}
 \framesubtitle{Orientações de partição}
 
-\begin{block:fact}{Range}
+\begin{block:fact}{Faixa de valores}
 \begin{itemize}
-	\item If the input condition specifies a range of values, there are three
-	partitions:
+	\item Se a condição específica de entrada especifica uma faixa de valores, há três partições:
 	\begin{itemize}
-		\item One valid, for the values within the range.
+		\item Uma válida, para os outros valores dentro do intervalo.
 
-		\item Two invalid, for values lower than the bottom value and greater
-		than top value of the range.
-		range.
+		\item Dois inválidos, para valores abaixo do valor mínimo, e maior que o valor do topo da faixa.
 	\end{itemize}
 \end{itemize}
 \end{block:fact}
@@ -239,16 +236,15 @@ A partição de equivalência é organizada em duas fases:
 
 \begin{block}{Example}
 \begin{itemize}
-	\item The requirement states that ``the item count can be from 1 to 999''.
+	\item A exigência afirma que "a contagem de item pode ser de 1 a 999"
 
-	\item There are three equivalence classes:
+	\item Há três classes de equivalência:
 	\begin{itemize}
-		\item Valid class: item count between 1 and 999 (including the number
-		1 and 999).
-		\item Invalid classes:
+		\item Classe válida: contagem de itens entre 1 e 999 (incluindo o número 1 e 999).
+		\item Classes inválidas:
 		\begin{itemize}
-			\item item count with a value less than 1,
-			\item item count with a value greater than 999.
+			\item Contagem do item com um valor menor que 1;
+			\item Contagem do item com um valor maior que 999.
 		\end{itemize}
 	\end{itemize}
 \end{itemize}
@@ -259,17 +255,17 @@ A partição de equivalência é organizada em duas fases:
 
 \begin{frame}
 \frametitle{Partição de equivalência}
-\framesubtitle{Limitations}
+\framesubtitle{Limitações}
 
-\begin{block:fact}{Limitations}
+\begin{block:fact}{Limitações}
 \begin{itemize}
-	\item The equivalence partition assumption is too strong in practice.
+	\item A suposição da partição de equivalência é muito forte na prática:
 	\begin{itemize}
-		\item It is quite common to have data-sensible faults which require a
-		specific value inside an equivalence class in order to be detected.
+		\item É bastante comum ter falhas de dados-sensíveis que requerem um
+		valor específico dentro de uma classe de equivalência a fim de ser detectado.
 	\end{itemize}
 
-	\item Partição de equivalência does not explore input condition combinations.
+	\item Partição de equivalência não explora combinações de condição de entrada.
 \end{itemize}
 \end{block:fact}
 \end{frame}

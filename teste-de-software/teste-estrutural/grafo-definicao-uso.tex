@@ -14,7 +14,7 @@ The Grafo Definição-Uso (DUG) é um programa gráfico adequado para representa
 
 	\item The grafo definição-uso inclui informações sobre as definições de variáveis, usos e destruições em cada nó:
 	\begin{itemize}
-		\item It contains all definition-use pairs(pares definição-uso) for a program.
+		\item Contém todas os pares definição-uso de um programa.
 	\end{itemize}
 \end{itemize}
 \end{block:fact}
@@ -138,9 +138,9 @@ A utilização de variável é quando a referência não é definida.
 \begin{frame}
 \label{concept:dug-construction}
 \frametitle{Grafo definição-uso}
-\framesubtitle{Grafo definição-uso construction}
+\framesubtitle{Construção do Grafo definição-uso}
 
-\begin{block:procedure}{DUG construction (1/2)}
+\begin{block:procedure}{Construção do DUG (1/2)}
 \begin{enumerate}
 	\item Considere um grafíco de controle de fluxo $G = (N, E)$ de um programa $P$, onde 
 	$N$ é o conjunto de nós e $E$ o conjunto de extremidades. Cada nó em $G$ 
@@ -163,9 +163,9 @@ A utilização de variável é quando a referência não é definida.
 
 \begin{frame}
 \frametitle{Grafo definição-uso}
-\framesubtitle{Grafo definição-uso construction}
+\framesubtitle{Construção do grafo definição-uso}
 
-\begin{block:procedure}{DUG construction (2/2)}
+\begin{block:procedure}{Construção do DUG(2/2)}
 \begin{enumerate}
 	\setcounter{enumi}{4}
 	\item Computar $def_i$, $c-use_i$, e $p-use_i$ para cada código de bloco $i$ em $P$;
