@@ -1,6 +1,7 @@
 Para modificar o slide produzido em latex, é necessário obter os seguintes recursos:
 	beamer - https://github.com/magsilva/latex-beamer
 	latex-scholar - https://github.com/magsilva/LaTeX-Scholar.git
+	lode (lode.zip)
 
 A melhor opção é clonar o repositório e criar um link de do diretório
 base para o diretório ~/texmf/tex/latex:
@@ -14,6 +15,8 @@ base para o diretório ~/texmf/tex/latex:
 Se você quiser, pode fazer o mesmo com o LaTeX-Scholar, só mude o
 destino do link para 'latex-scholar' e use o repositório
 https://github.com/magsilva/LaTeX-Scholar.git
+
+Faça o mesmo para o lode.
 
 Segue repositório ondem contém o slide - https://github.com/magsilva/OER-IC.git
 	cd Projects
